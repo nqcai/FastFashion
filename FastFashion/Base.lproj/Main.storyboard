@@ -61,6 +61,7 @@
                                         </state>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VN1-h5-zbn"/>
+                                            <action selector="sendSearchRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LCo-3m-HHF"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -84,6 +84,51 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentViewController(picker, animated: true, completion: nil)
     }
     
+    @IBAction func sendSearchRequest(sender: AnyObject) {
+        var imgData = UIImagePNGRepresentation(imageView.image!)
+
+        if (imgData != nil) {
+            //TODO have base URL
+            let postURL = ""
+            let myURL = NSURL(string: postURL)
+            
+            var request = NSMutableURLRequest(URL: myURL!)
+            var session = NSURLSession.sharedSession()
+            
+            request.HTTPMethod = "POST"
+            
+            var boundary = NSString(format: "----1a941z5910")
+            var contentType = NSString(format: "multipart/form-data; boundary=%@", boundary)
+            request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
+            
+            var body = NSMutableData()
+            
+            //Title
+            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format:"Content-Disposition: form-data; name=\"title\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData("Hey it's Cliff".dataUsingEncoding(NSUTF8StringEncoding)!)
+            
+            //Image
+            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format: "Content-Disposition: form-data; name=\"FoodToTag_img\"; filename=\"img.jpg\"\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(imgData!)
+            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            
+            request.HTTPBody = body
+            
+            do {
+                let returnData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+                var returnString = NSString(data: returnData, encoding: NSUTF8StringEncoding)
+            } catch (let e) {
+                print(e)
+            }
+
+            
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
