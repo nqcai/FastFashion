@@ -13,6 +13,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var cameraView: UIView!
+
     let picker = UIImagePickerController()
     
     var captureSession: AVCaptureSession?
@@ -97,7 +99,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        imageView?.frame = imageView.bounds
+        previewLayer?.frame = cameraView.bounds
+//        imageView?.frame = imageView.bounds
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -119,7 +122,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
                     previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
                     previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
-                    imageView.layer.addSublayer(previewLayer!)
+                    cameraView.layer.addSublayer(previewLayer!)
                     captureSession?.startRunning()
                 }
             }
