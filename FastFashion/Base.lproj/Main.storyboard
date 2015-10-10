@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -10,14 +9,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FastFashion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Avk-qR-jN8"/>
+                        <viewControllerLayoutGuide type="bottom" id="goX-XK-UDO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLV-1U-hzr">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLV-1U-hzr">
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJO-hi-z5w">
@@ -29,22 +28,40 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAy-R2-wTw">
-                                <rect key="frame" x="122" y="442" width="77" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Take Photo"/>
-                                <connections>
-                                    <action selector="takePicture" destination="BYZ-38-t0r" eventType="touchUpInside" id="SB5-e5-ax8"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSZ-cX-tIr">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSZ-cX-tIr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-RL-Hdc">
-                                        <rect key="frame" x="73" y="488" width="174" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAy-R2-wTw">
+                                        <rect key="frame" x="40" y="448" width="100" height="30"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Choose an existing photo"/>
+                                        <color key="backgroundColor" red="1" green="0.67618336189999995" blue="0.26324001920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Take Photo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePicture" destination="BYZ-38-t0r" eventType="touchUpInside" id="SB5-e5-ax8"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91e-W9-cvk">
+                                        <rect key="frame" x="40" y="119" width="240" height="240"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWc-PK-KWz">
+                                        <rect key="frame" x="102" y="507" width="117" height="30"/>
+                                        <color key="backgroundColor" red="0.32035275282515385" green="0.60460356322026398" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VN1-h5-zbn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-RL-Hdc">
+                                        <rect key="frame" x="180" y="448" width="100" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="0.67618336190571615" blue="0.26324001923548757" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Select Photo">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="chooseImageFromPhotoLibrary" destination="BYZ-38-t0r" eventType="touchUpInside" id="af8-J2-uaZ"/>
                                         </connections>
@@ -56,20 +73,9 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="JLV-1U-hzr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Pg-da-1l2"/>
-                            <constraint firstItem="xAy-R2-wTw" firstAttribute="centerX" secondItem="JLV-1U-hzr" secondAttribute="centerX" id="838-zk-IT8"/>
-                            <constraint firstItem="xAy-R2-wTw" firstAttribute="top" secondItem="JLV-1U-hzr" secondAttribute="bottom" constant="94" id="AP9-R4-kv8"/>
-                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Fo5-hn-Ver"/>
-                            <constraint firstItem="xAy-R2-wTw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GQb-DQ-G3d"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xAy-R2-wTw" secondAttribute="bottom" constant="96" id="nf1-9Q-2bf"/>
-                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rLv-pM-h2l"/>
-                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="centerY" secondItem="JLV-1U-hzr" secondAttribute="centerY" id="u4c-tS-0mz"/>
-                            <constraint firstItem="JLV-1U-hzr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="xib-SZ-BWl"/>
-                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="centerX" secondItem="xAy-R2-wTw" secondAttribute="centerX" id="zcn-Oc-6WW"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="myImage" destination="91e-W9-cvk" id="9eG-Gm-UKn"/>
                         <outlet property="previewView" destination="QSZ-cX-tIr" id="ktj-O7-a45"/>
                     </connections>
                 </viewController>

@@ -11,23 +11,46 @@ import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
-    @IBOutlet weak var capturedImage: UIImageView!
-    
+    @IBOutlet weak var myImage: UIView!
     @IBOutlet weak var previewView: UIView!
+    
+    let picker = UIImagePickerController()
     
     var captureSession: AVCaptureSession?
     var stillImageOutput: AVCaptureStillImageOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
-    @IBAction func didPressTakePhoto(sender: AnyObject) {
-        
+    @IBAction func searchButtonPressed(sender: AnyObject) {
+        //myImageUploadRequest();
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let myImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as! UIImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func chooseImageFromPhotoLibrary() {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.sourceType = .PhotoLibrary
+        
+        presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func takePicture() {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.sourceType = .Camera
+        
+        presentViewController(picker, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        picker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,35 +91,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
         }
         
-        
-        
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    @IBAction func chooseImageFromPhotoLibrary() {
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        picker.sourceType = .PhotoLibrary
-        
-        presentViewController(picker, animated: true, completion: nil)
-    }
-    
-    @IBAction func takePicture() {
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        picker.sourceType = .Camera
-        
-        presentViewController(picker, animated: true, completion: nil)
     }
 
 }
