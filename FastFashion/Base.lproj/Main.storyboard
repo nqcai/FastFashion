@@ -16,14 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-RL-Hdc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-RL-Hdc">
                                 <rect key="frame" x="73" y="518" width="174" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Choose an existing photo"/>
+                                <connections>
+                                    <action selector="chooseImageFromPhotoLibrary" destination="BYZ-38-t0r" eventType="touchUpInside" id="af8-J2-uaZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rhu-RL-Hdc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7s3-mg-Dbz"/>
+                            <constraint firstAttribute="bottom" secondItem="rhu-RL-Hdc" secondAttribute="bottom" constant="20" symbolic="YES" id="sID-9J-tK1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
