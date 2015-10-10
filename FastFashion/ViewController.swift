@@ -27,18 +27,60 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        captureSession = AVCaptureSession()
-        captureSession!.sessionPreset = AVCaptureSessionPresetPhoto
-        var backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        var error: NSError?
-//        var input = AVCaptureDeviceInput(device: backCamera, error: &error)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        previewLayer?.frame = previewView.bounds
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        captureSession = AVCaptureSession()
+        captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
+        
+        var backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        var error : NSError?
+//        var input = 1
+        do {
+            var input = try AVCaptureDeviceInput(device: backCamera)
+            if (error == nil && captureSession?.canAddInput(input) != nil) {
+                captureSession?.addInput(input)
+                stillImageOutput = AVCaptureStillImageOutput()
+                stillImageOutput?.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
+                if (captureSession?.canAddOutput(stillImageOutput) != nil){
+                    captureSession?.addOutput(stillImageOutput)
+                    previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+                    previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
+                    previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
+                    previewView.layer.addSublayer(previewLayer!)
+                    captureSession?.startRunning()
+                }
+            }
 
+        } catch {
+            
+        }
+        
+        
+        
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func chooseImageFromPhotoLibrary() {
         let picker = UIImagePickerController()
         

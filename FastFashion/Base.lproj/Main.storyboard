@@ -17,33 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-RL-Hdc">
-                                <rect key="frame" x="73" y="518" width="174" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Choose an existing photo"/>
-                                <connections>
-                                    <action selector="chooseImageFromPhotoLibrary" destination="BYZ-38-t0r" eventType="touchUpInside" id="af8-J2-uaZ"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H8u-c3-d5j">
-                                <rect key="frame" x="40" y="28" width="240" height="128"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="bLV-Tg-pyD"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLV-1U-hzr">
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJO-hi-z5w">
                                         <rect key="frame" x="0.0" y="8" width="240" height="128"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSZ-cX-tIr">
-                                                <rect key="frame" x="-8" y="0.0" width="240" height="128"/>
-                                                <animations/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -59,31 +37,45 @@
                                     <action selector="takePicture" destination="BYZ-38-t0r" eventType="touchUpInside" id="SB5-e5-ax8"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSZ-cX-tIr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-RL-Hdc">
+                                        <rect key="frame" x="73" y="488" width="174" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Choose an existing photo"/>
+                                        <connections>
+                                            <action selector="chooseImageFromPhotoLibrary" destination="BYZ-38-t0r" eventType="touchUpInside" id="af8-J2-uaZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rhu-RL-Hdc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7s3-mg-Dbz"/>
+                            <constraint firstItem="JLV-1U-hzr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Pg-da-1l2"/>
                             <constraint firstItem="xAy-R2-wTw" firstAttribute="centerX" secondItem="JLV-1U-hzr" secondAttribute="centerX" id="838-zk-IT8"/>
                             <constraint firstItem="xAy-R2-wTw" firstAttribute="top" secondItem="JLV-1U-hzr" secondAttribute="bottom" constant="94" id="AP9-R4-kv8"/>
-                            <constraint firstItem="H8u-c3-d5j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="AUk-Kx-vLk"/>
-                            <constraint firstItem="xAy-R2-wTw" firstAttribute="centerX" secondItem="rhu-RL-Hdc" secondAttribute="centerX" id="G9d-MG-fez"/>
-                            <constraint firstItem="JLV-1U-hzr" firstAttribute="top" secondItem="H8u-c3-d5j" secondAttribute="bottom" constant="64" id="JWJ-XG-k3a"/>
-                            <constraint firstItem="H8u-c3-d5j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="PqB-UU-RPb"/>
-                            <constraint firstItem="H8u-c3-d5j" firstAttribute="leading" secondItem="JLV-1U-hzr" secondAttribute="leading" id="p0O-7O-oC1"/>
-                            <constraint firstAttribute="bottom" secondItem="rhu-RL-Hdc" secondAttribute="bottom" constant="20" symbolic="YES" id="sID-9J-tK1"/>
-                            <constraint firstItem="rhu-RL-Hdc" firstAttribute="top" secondItem="xAy-R2-wTw" secondAttribute="bottom" constant="46" id="w6D-He-u3y"/>
-                            <constraint firstItem="xAy-R2-wTw" firstAttribute="centerX" secondItem="H8u-c3-d5j" secondAttribute="centerX" id="xl2-3h-Rfa"/>
+                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Fo5-hn-Ver"/>
+                            <constraint firstItem="xAy-R2-wTw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GQb-DQ-G3d"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xAy-R2-wTw" secondAttribute="bottom" constant="96" id="nf1-9Q-2bf"/>
+                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rLv-pM-h2l"/>
+                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="centerY" secondItem="JLV-1U-hzr" secondAttribute="centerY" id="u4c-tS-0mz"/>
+                            <constraint firstItem="JLV-1U-hzr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="xib-SZ-BWl"/>
+                            <constraint firstItem="QSZ-cX-tIr" firstAttribute="centerX" secondItem="xAy-R2-wTw" secondAttribute="centerX" id="zcn-Oc-6WW"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="capturedImage" destination="H8u-c3-d5j" id="SDD-eG-ect"/>
-                        <outlet property="previewView" destination="JLV-1U-hzr" id="XOz-Yt-Tys"/>
+                        <outlet property="previewView" destination="QSZ-cX-tIr" id="ktj-O7-a45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237.33333333333334" y="435.94"/>
+            <point key="canvasLocation" x="237" y="435"/>
         </scene>
     </scenes>
 </document>
