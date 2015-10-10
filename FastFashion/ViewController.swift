@@ -10,9 +10,8 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
-
-    @IBOutlet weak var myImage: UIView!
-    @IBOutlet weak var previewView: UIView!
+    
+    @IBOutlet weak var imageView: UIImageView!
     
     let picker = UIImagePickerController()
     
@@ -24,21 +23,59 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //myImageUploadRequest();
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let myImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as! UIImage
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerController(
+        picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        imageView.contentMode = .ScaleAspectFit //3
+        imageView.image = chosenImage //4
+        dismissViewControllerAnimated(true, completion: nil) //5
     }
     
-    @IBAction func chooseImageFromPhotoLibrary() {
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        picker.sourceType = .PhotoLibrary
-        
-        presentViewController(picker, animated: true, completion: nil)
+    //What to do if the image picker cancels.
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true,
+            completion: nil)
     }
+    
+    @IBAction func chooseImage(sender: UIBarButtonItem) {
+    
+            picker.allowsEditing = false
+            picker.sourceType = .PhotoLibrary
+            picker.modalPresentationStyle = .Popover
+            presentViewController(picker,
+                animated: true,
+                completion: nil)
+            picker.popoverPresentationController?.barButtonItem = sender
+            }
+
     
     @IBAction func takePicture() {
+        if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
+            let alert = UIAlertController(title: "Error", message: "Camera is not available on this device", preferredStyle: UIAlertControllerStyle.Alert)
+
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+                switch action.style{
+                case .Default:
+                    print("default")
+                    
+                case .Cancel:
+                    print("cancel")
+                    
+                case .Destructive:
+                    print("destructive")
+                }
+            }))
+            
+
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            return
+            
+        }
         let picker = UIImagePickerController()
         
         picker.delegate = self
@@ -60,7 +97,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        previewLayer?.frame = previewView.bounds
+        imageView?.frame = imageView.bounds
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,7 +119,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
                     previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
                     previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
-                    previewView.layer.addSublayer(previewLayer!)
+                    imageView.layer.addSublayer(previewLayer!)
                     captureSession?.startRunning()
                 }
             }
