@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,12 +20,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSZ-cX-tIr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOa-2x-4XT">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9On-Xf-lQQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <animations/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAy-R2-wTw">
                                         <rect key="frame" x="0.0" y="386" width="320" height="54"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="0.67618336189999995" blue="0.26324001920000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="JZ6-PI-n8Z"/>
+                                            <constraint firstAttribute="height" constant="54" id="sND-pT-RAe"/>
                                         </constraints>
                                         <state key="normal" title="Take Photo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,11 +57,6 @@
                                             <action selector="chooseImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jkm-LI-Eht"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91e-W9-cvk">
-                                        <rect key="frame" x="0.0" y="0.0" width="204" height="193"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWc-PK-KWz">
                                         <rect key="frame" x="0.0" y="492" width="320" height="76"/>
                                         <animations/>
@@ -63,29 +68,28 @@
                                             <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VN1-h5-zbn"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OOa-2x-4XT">
-                                        <rect key="frame" x="0.0" y="206" width="240" height="128"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="RWc-PK-KWz" firstAttribute="top" secondItem="xAy-R2-wTw" secondAttribute="bottom" constant="52" id="5A0-hN-ib7"/>
-                                    <constraint firstItem="rhu-RL-Hdc" firstAttribute="leading" secondItem="xAy-R2-wTw" secondAttribute="leading" id="5cf-G1-olG"/>
-                                    <constraint firstItem="rhu-RL-Hdc" firstAttribute="top" secondItem="91e-W9-cvk" secondAttribute="bottom" constant="53" id="6XB-Nv-6UQ"/>
-                                    <constraint firstItem="xAy-R2-wTw" firstAttribute="top" secondItem="91e-W9-cvk" secondAttribute="bottom" id="BG9-aC-kE3"/>
+                                    <constraint firstAttribute="trailing" secondItem="9On-Xf-lQQ" secondAttribute="trailing" id="3a2-jD-WuI"/>
+                                    <constraint firstAttribute="bottom" secondItem="OOa-2x-4XT" secondAttribute="bottom" id="46J-16-L5h"/>
+                                    <constraint firstItem="xAy-R2-wTw" firstAttribute="trailing" secondItem="rhu-RL-Hdc" secondAttribute="trailing" id="EsC-nq-Ckr"/>
+                                    <constraint firstItem="OOa-2x-4XT" firstAttribute="leading" secondItem="QSZ-cX-tIr" secondAttribute="leading" id="FJ5-4t-F7G"/>
                                     <constraint firstItem="rhu-RL-Hdc" firstAttribute="trailing" secondItem="RWc-PK-KWz" secondAttribute="trailing" id="JCI-0u-YUF"/>
+                                    <constraint firstItem="xAy-R2-wTw" firstAttribute="leading" secondItem="rhu-RL-Hdc" secondAttribute="leading" id="Kyg-YI-D89"/>
+                                    <constraint firstItem="OOa-2x-4XT" firstAttribute="trailing" secondItem="QSZ-cX-tIr" secondAttribute="trailingMargin" constant="8" id="LjG-OY-hca"/>
                                     <constraint firstAttribute="bottom" secondItem="RWc-PK-KWz" secondAttribute="bottom" id="Opd-Xw-RiQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="xAy-R2-wTw" secondAttribute="bottom" constant="128" id="Q5S-cO-In0"/>
                                     <constraint firstItem="RWc-PK-KWz" firstAttribute="leading" secondItem="QSZ-cX-tIr" secondAttribute="leading" id="RZJ-Bz-9OR"/>
+                                    <constraint firstItem="OOa-2x-4XT" firstAttribute="top" secondItem="QSZ-cX-tIr" secondAttribute="top" id="XUb-Mn-bw0"/>
                                     <constraint firstItem="RWc-PK-KWz" firstAttribute="leading" secondItem="rhu-RL-Hdc" secondAttribute="leading" id="XjX-sC-7bk"/>
-                                    <constraint firstItem="91e-W9-cvk" firstAttribute="top" secondItem="QSZ-cX-tIr" secondAttribute="top" id="alt-ad-a0e"/>
-                                    <constraint firstItem="rhu-RL-Hdc" firstAttribute="trailing" secondItem="xAy-R2-wTw" secondAttribute="trailing" id="njc-Zw-h7L"/>
-                                    <constraint firstItem="91e-W9-cvk" firstAttribute="trailing" secondItem="xAy-R2-wTw" secondAttribute="trailing" id="oli-al-ZHQ"/>
+                                    <constraint firstItem="9On-Xf-lQQ" firstAttribute="top" secondItem="QSZ-cX-tIr" secondAttribute="top" id="ZsC-q1-Nzo"/>
+                                    <constraint firstItem="9On-Xf-lQQ" firstAttribute="leading" secondItem="QSZ-cX-tIr" secondAttribute="leading" id="i37-8S-qEP"/>
                                     <constraint firstAttribute="bottom" secondItem="rhu-RL-Hdc" secondAttribute="bottom" constant="75" id="tpI-gb-cnN"/>
                                     <constraint firstAttribute="trailing" secondItem="RWc-PK-KWz" secondAttribute="trailing" id="uJe-FM-25P"/>
-                                    <constraint firstItem="xAy-R2-wTw" firstAttribute="leading" secondItem="91e-W9-cvk" secondAttribute="leading" id="wRY-9D-UiU"/>
+                                    <constraint firstAttribute="bottom" secondItem="9On-Xf-lQQ" secondAttribute="bottom" id="uZg-Cp-klb"/>
+                                    <constraint firstItem="RWc-PK-KWz" firstAttribute="top" secondItem="xAy-R2-wTw" secondAttribute="bottom" constant="52" id="wew-j6-6Is"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,12 +104,12 @@
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="OOa-2x-4XT" id="vFm-AP-s1s"/>
-                        <outlet property="imageView" destination="91e-W9-cvk" id="A6H-Uz-7Q0"/>
+                        <outlet property="imageView" destination="9On-Xf-lQQ" id="8mo-i6-vfI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237" y="435"/>
+            <point key="canvasLocation" x="220" y="426"/>
         </scene>
     </scenes>
 </document>

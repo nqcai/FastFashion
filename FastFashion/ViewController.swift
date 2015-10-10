@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var imageView: UIImageView!
     
     @IBOutlet weak var cameraView: UIView!
 
@@ -132,6 +132,70 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
     }
+    
+    func didPressTakePhoto() {
+        if let videoConnection = stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo) {
+            videoConnection.videoOrientation = AVCaptureVideoOrientation.Portrait
+            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {
+                    (sampleBuffer, error) in
+                
+                    if sampleBuffer != nil {
+                        var imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                        var dataProvider = CGDataProviderCreateWithCFData(imageData)
+                        var cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault)
+                        
+                        var image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+                        
+                        self.imageView.image = image
+                        self.imageView.hidden = false
+//                        self.cameraView.hidden = true
+        
+                    }
+                })
+            
+        }
+        
+    }
+    
+    var didTakePhoto = Bool()
+    
+    func didPressTakeAnother() {
+        if didTakePhoto == true {
+//            self.cameraView.hidden = false
+            imageView.hidden = true
+            didTakePhoto = false
+        } else {
+            captureSession?.startRunning()
+            didTakePhoto = true
+            didPressTakePhoto()
+            
+        }
+    }
+    
+
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        didPressTakeAnother()
+    }
+//
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
 
