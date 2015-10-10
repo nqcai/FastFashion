@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
+    @IBOutlet weak var capturedImage: UIImageView!
+    
+    @IBOutlet weak var previewView: UIView!
+    
+    var captureSession: AVCaptureSession?
+    var stillImageOutput: AVCaptureStillImageOutput?
+    var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    @IBAction func didPressTakePhoto(sender: AnyObject) {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        captureSession = AVCaptureSession()
+        captureSession!.sessionPreset = AVCaptureSessionPresetPhoto
+        var backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        var error: NSError?
+//        var input = AVCaptureDeviceInput(device: backCamera, error: &error)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +44,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         picker.delegate = self
         picker.sourceType = .PhotoLibrary
+        
+        presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func takePicture() {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.sourceType = .Camera
         
         presentViewController(picker, animated: true, completion: nil)
     }
