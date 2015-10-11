@@ -21,12 +21,20 @@ class FetchResults {
         }
     }
     
-    func sendBlobRecv(blobId: String) {
+    func sendBlobRecv(blobId: String) -> NSDictionary {
         print(blobId)
+        Alamofire.request(.POST, "https://nameless-cliffs-9474.herokuapp.com/bbb", parameters: ["blob_id": blobId]).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // URL response
+            let resstr = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
+            print(resstr)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                
+                print("JSON: \(JSON)")
+            }
         
-        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
-            .responseJSON { response in
-                print(response)
         }
         
     }

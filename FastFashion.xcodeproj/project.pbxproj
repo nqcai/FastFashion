@@ -11,6 +11,8 @@
 		3774F8F11BC9FB120051DDC6 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774F8F01BC9FB120051DDC6 /* libxml2.2.tbd */; };
 		3774F8F31BC9FB3B0051DDC6 /* Azure Storage Client Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774F8F21BC9FB3B0051DDC6 /* Azure Storage Client Library.framework */; settings = {ASSET_TAGS = (); }; };
 		3774F8F71BCA1D090051DDC6 /* FetchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774F8F61BCA1D090051DDC6 /* FetchResults.swift */; settings = {ASSET_TAGS = (); }; };
+		37BB50B11BCA51C0008064C7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BB50A61BCA3E4C008064C7 /* Alamofire.framework */; };
+		37BB50B21BCA51C0008064C7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37BB50A61BCA3E4C008064C7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C391BC9F1AB00E04944 /* RBResizer.swift */; settings = {ASSET_TAGS = (); }; };
 		C3F1FF641BC8F08400117D9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF631BC8F08400117D9B /* AppDelegate.swift */; };
 		C3F1FF661BC8F08400117D9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF651BC8F08400117D9B /* ViewController.swift */; };
@@ -68,6 +70,13 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
+		37BB50B31BCA51C0008064C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37BB509D1BCA3E4C008064C7 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		C3F1FF751BC8F08400117D9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C3F1FF581BC8F08400117D9B /* Project object */;
@@ -83,6 +92,20 @@
 			remoteInfo = FastFashion;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		37BB50B51BCA51C0008064C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				37BB50B21BCA51C0008064C7 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3774F8ED1BC9FB070051DDC6 /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
@@ -118,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3774F8F31BC9FB3B0051DDC6 /* Azure Storage Client Library.framework in Frameworks */,
+				37BB50B11BCA51C0008064C7 /* Alamofire.framework in Frameworks */,
 				3774F8F11BC9FB120051DDC6 /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,11 +248,13 @@
 				C3F1FF5C1BC8F08400117D9B /* Sources */,
 				C3F1FF5D1BC8F08400117D9B /* Frameworks */,
 				C3F1FF5E1BC8F08400117D9B /* Resources */,
+				37BB50B51BCA51C0008064C7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				37BB50B01BCA3E59008064C7 /* PBXTargetDependency */,
+				37BB50B41BCA51C0008064C7 /* PBXTargetDependency */,
 			);
 			name = FastFashion;
 			productName = FastFashion;
@@ -425,6 +451,11 @@
 			name = "Alamofire iOS";
 			targetProxy = 37BB50AF1BCA3E59008064C7 /* PBXContainerItemProxy */;
 		};
+		37BB50B41BCA51C0008064C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 37BB50B31BCA51C0008064C7 /* PBXContainerItemProxy */;
+		};
 		C3F1FF761BC8F08400117D9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C3F1FF5F1BC8F08400117D9B /* FastFashion */;
@@ -542,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -558,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

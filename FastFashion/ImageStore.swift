@@ -91,6 +91,7 @@ required init?() {
     }
     
     func uploadBlob(title: String, contents: String) -> String {
+       
             if (!title.isEmpty)
             {
                 let blob = container.blockBlobReferenceFromName(title)
@@ -99,10 +100,10 @@ required init?() {
                 blob.uploadFromText(contents ?? "",  completionHandler: { (error: NSError?) -> Void in
                     self.uploadFinished = true
                     print("Upload completed")
+                    
                     var fr = FetchResults()
                     
                     fr!.sendBlobRecv(self.blobId) // server starts working
-                    
                 })
             }
         return self.blobId
