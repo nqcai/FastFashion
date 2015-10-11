@@ -24,11 +24,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func searchButtonPressed(sender: AnyObject) {
         var img:UIImage? = imageView.image
         
-        var imgStore = ImageStore()
+        if (img != nil) {
+            var imgStore = ImageStore()
         
-        
-        imgStore?.uploadImage(img!)
-        
+            imgStore?.uploadImage(img!)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "No image was selected.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+                switch action.style{
+                case .Default:
+                    print("default")
+                    
+                case .Cancel:
+                    print("cancel")
+                    
+                case .Destructive:
+                    print("destructive")
+                }
+            }))
+            
+            
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            return
+
+        }
         //myImageUploadRequest();
     }
     
