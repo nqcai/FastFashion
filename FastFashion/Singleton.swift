@@ -11,7 +11,7 @@ import Foundation
 private let _sharedInstance = Singleton()
 class Singleton {
     private init() {
-
+        
     }
     class var sharedInstance: Singleton {
         return _sharedInstance

@@ -36,14 +36,14 @@ class FetchResults {
                 let n_data = JSON.dataUsingEncoding(NSUTF8StringEncoding)
                 do {
                     if let json: AnyObject = try NSJSONSerialization.JSONObjectWithData(n_data!, options: NSJSONReadingOptions.AllowFragments) { // Check 2
-                    if let jsonDictionary = json as? NSDictionary { // Check 3
-                        print("\(jsonDictionary)")
-                    }
+                        if let jsonDictionary = json as? NSDictionary { // Check 3
+                            let singleton = Singleton.sharedInstance
+                            singleton.mealDictionary = jsonDictionary
+                            print("\(jsonDictionary)")
+                        }
                     
-                }
+                    }
                 } catch {}
-
-                
             }
         
         }

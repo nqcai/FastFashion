@@ -13,7 +13,7 @@
 		3774F8F71BCA1D090051DDC6 /* FetchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774F8F61BCA1D090051DDC6 /* FetchResults.swift */; settings = {ASSET_TAGS = (); }; };
 		37BB50B11BCA51C0008064C7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BB50A61BCA3E4C008064C7 /* Alamofire.framework */; };
 		37BB50B21BCA51C0008064C7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37BB50A61BCA3E4C008064C7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C391BC9F1AB00E04944 /* RBResizer.swift */; settings = {ASSET_TAGS = (); }; };
+		A6FB4EC01BCA6A6B00905898 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB4EBF1BCA6A6B00905898 /* Singleton.swift */; settings = {ASSET_TAGS = (); }; };
 		C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C391BC9F1AB00E04944 /* RBResizer.swift */; settings = {ASSET_TAGS = (); }; };
 		C3D05C3F1BCA260D00E04944 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C3E1BCA260D00E04944 /* DetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C3D05C411BCA30FF00E04944 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C401BCA30FF00E04944 /* DetailTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -116,8 +116,7 @@
 		3774F8F21BC9FB3B0051DDC6 /* Azure Storage Client Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Azure Storage Client Library.framework"; sourceTree = "<group>"; };
 		3774F8F61BCA1D090051DDC6 /* FetchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResults.swift; sourceTree = "<group>"; };
 		37BB509D1BCA3E4C008064C7 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../alamofire/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		C3D05C391BC9F1AB00E04944 /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
-		C3D05C3B1BC9F46200E04944 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		A6FB4EBF1BCA6A6B00905898 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		C3D05C391BC9F1AB00E04944 /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
 		C3D05C3B1BC9F46200E04944 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		C3D05C3E1BCA260D00E04944 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +221,7 @@
 				C3F1FF9F1BC9D4DB00117D9B /* Meal.swift */,
 				C3D05C391BC9F1AB00E04944 /* RBResizer.swift */,
 				3774F8F61BCA1D090051DDC6 /* FetchResults.swift */,
+				A6FB4EBF1BCA6A6B00905898 /* Singleton.swift */,
 			);
 			path = FastFashion;
 			sourceTree = "<group>";
@@ -427,6 +427,7 @@
 				C3F1FF9A1BC9C3F700117D9B /* TableViewController.swift in Sources */,
 				C3D05C411BCA30FF00E04944 /* DetailTableViewController.swift in Sources */,
 				C3F1FF641BC8F08400117D9B /* AppDelegate.swift in Sources */,
+				A6FB4EC01BCA6A6B00905898 /* Singleton.swift in Sources */,
 				C3F1FFA01BC9D4DB00117D9B /* Meal.swift in Sources */,
 				3774F8EF1BC9FB070051DDC6 /* ImageStore.swift in Sources */,
 				C3F1FF9C1BC9C8D100117D9B /* RecipeTableViewCell.swift in Sources */,
