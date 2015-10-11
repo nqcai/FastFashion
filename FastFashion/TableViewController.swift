@@ -13,6 +13,8 @@ class TableViewController: UITableViewController {
     // MARK: Properties
     
     var meals = [Meal]()
+    
+//    var imageSize = CGSize(width: 90, height: 90)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +27,24 @@ class TableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    func getOptimalImageSize(image: UIImage) -> CGSize {
+        let x = image.size.width
+        let y = image.size.height
+        let minDimension = min(x, y)
+        return CGSize(width: minDimension, height: minDimension)
+    }
+    
     func loadSampleMeals() {
-        let photo1 = UIImage(named: "salsa")!
+        var photo1 = UIImage(named: "salsa")!
+        photo1 = RBSquareImageTo(photo1, size: getOptimalImageSize(photo1))
         let meal1 = Meal(name: "Salsa", photo: photo1, rating: 4, recipe: ["Add salsa"])!
         
-        let photo2 = UIImage(named: "coffee")!
+        var photo2 = UIImage(named: "coffee")!
+        photo2 = RBSquareImageTo(photo2, size: getOptimalImageSize(photo2))
         let meal2 = Meal(name: "Iced Coffee", photo: photo2, rating: 2, recipe: ["Put some caffeine"])!
         
-        let photo3 = UIImage(named: "baconpopper")!
+        var photo3 = UIImage(named: "baconpopper")!
+        photo3 = RBSquareImageTo(photo3, size: getOptimalImageSize(photo3))
         let meal3 = Meal(name: "Bacon Wrapped Jalepeno Poppers", photo: photo3, rating: 1, recipe: ["Wrap with bacon"])!
         
         meals += [meal1, meal2, meal3]

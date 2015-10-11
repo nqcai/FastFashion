@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C391BC9F1AB00E04944 /* RBResizer.swift */; settings = {ASSET_TAGS = (); }; };
 		C3F1FF641BC8F08400117D9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF631BC8F08400117D9B /* AppDelegate.swift */; };
 		C3F1FF661BC8F08400117D9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF651BC8F08400117D9B /* ViewController.swift */; };
 		C3F1FF691BC8F08400117D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F1FF671BC8F08400117D9B /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3D05C391BC9F1AB00E04944 /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
+		C3D05C3B1BC9F46200E04944 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		C3F1FF601BC8F08400117D9B /* FastFashion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastFashion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F1FF631BC8F08400117D9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F1FF651BC8F08400117D9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 				C3F1FF631BC8F08400117D9B /* AppDelegate.swift */,
 				C3F1FF651BC8F08400117D9B /* ViewController.swift */,
 				C3F1FF991BC9C3F700117D9B /* TableViewController.swift */,
+				C3D05C3B1BC9F46200E04944 /* MyPlayground.playground */,
 				C3F1FF9B1BC9C8D100117D9B /* RecipeTableViewCell.swift */,
 				C3F1FF671BC8F08400117D9B /* Main.storyboard */,
 				C3F1FF6A1BC8F08400117D9B /* Assets.xcassets */,
@@ -115,6 +119,7 @@
 				C3F1FF6F1BC8F08400117D9B /* Info.plist */,
 				C3F1FF9D1BC9D27F00117D9B /* MealTableViewController.swift */,
 				C3F1FF9F1BC9D4DB00117D9B /* Meal.swift */,
+				C3D05C391BC9F1AB00E04944 /* RBResizer.swift */,
 			);
 			path = FastFashion;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			files = (
 				C3F1FF9E1BC9D27F00117D9B /* MealTableViewController.swift in Sources */,
 				C3F1FF661BC8F08400117D9B /* ViewController.swift in Sources */,
+				C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */,
 				C3F1FF9A1BC9C3F700117D9B /* TableViewController.swift in Sources */,
 				C3F1FF641BC8F08400117D9B /* AppDelegate.swift in Sources */,
 				C3F1FFA01BC9D4DB00117D9B /* Meal.swift in Sources */,
@@ -497,6 +503,7 @@
 				C3F1FF8A1BC8F08400117D9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F1FF8B1BC8F08400117D9B /* Build configuration list for PBXNativeTarget "FastFashionTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +512,7 @@
 				C3F1FF8D1BC8F08400117D9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F1FF8E1BC8F08400117D9B /* Build configuration list for PBXNativeTarget "FastFashionUITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +521,7 @@
 				C3F1FF901BC8F08400117D9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
