@@ -52,6 +52,8 @@ class TableViewController: UITableViewController {
 //        photo3 = RBSquareImageTo(photo3, size: getOptimalImageSize(photo3))
         let meal3 = Meal(name: "Bacon Wrapped Jalepeno Poppers", photo: photo3, rating: 1, recipe: ["Wrap with bacon"])!
         
+        print(singleton.mealDictionary!.valueForKey("0"))
+        
         meals += [meal1, meal2, meal3]
     }
 
