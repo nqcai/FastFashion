@@ -31,7 +31,8 @@ var containerName = "imagestore"
 var blobs = [AZSCloudBlob]()
 var container : AZSCloudBlobContainer
 var continuationToken : AZSContinuationToken?
-
+var blobId = ""
+    
 // MARK: Initializers
 
 required init?() {
@@ -61,7 +62,6 @@ required init?() {
         }
         condition.unlock()
     }
-    
     self.continuationToken = nil
 
     
@@ -72,7 +72,8 @@ required init?() {
         
         let b64Encoded = imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         
-        self.uploadBlob(generateName(16), contents: b64Encoded)
+        self.blobId = generateName(16)
+        self.uploadBlob(self.blobId, contents: b64Encoded)
     }
     
     func generateName(len: Int) -> String {
@@ -89,7 +90,7 @@ required init?() {
         return randomString as String
     }
     
-    func uploadBlob(title: String, contents: String) {
+    func uploadBlob(title: String, contents: String) -> String {
             if (!title.isEmpty)
             {
                 let blob = container.blockBlobReferenceFromName(title)
@@ -97,8 +98,13 @@ required init?() {
                 
                 blob.uploadFromText(contents ?? "",  completionHandler: { (error: NSError?) -> Void in
                     self.uploadFinished = true
+                    print("Upload completed")
+                    var fr = FetchResults()
+                    
+                    fr!.sendBlobRecv(self.blobId) // server starts working
+                    
                 })
             }
-        
+        return self.blobId
     }
 }

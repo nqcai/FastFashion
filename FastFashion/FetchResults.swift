@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class FetchResults {
     
@@ -18,18 +19,21 @@ class FetchResults {
         if (!istore.uploadStarted) {
             return
         }
-        while (!istore.uploadFinished) {
-            NSTimer.
-        }
-    }
-    func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest))
     }
     
-    func parseJSON(inputData: NSData) -> NSDictionary{
-        var error: NSError?
-        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+    func sendBlobRecv(blobId: String) {
+        print(blobId)
         
-        return boardsDictionary
+        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
+            .responseJSON { response in
+                print(response)
+        }
+        
     }
+    
+    func parseJSON(inputData: NSData) {
+        let request = NSURLRequest(URL: NSURL(string: "http://bytearray.org/wp-content/projects/json/colors.json")!)
+        let loader = NSURLConnection(request: request, delegate: self, startImmediately: true)
+
+            }
 }
