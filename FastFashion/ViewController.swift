@@ -22,6 +22,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var previewLayer: AVCaptureVideoPreviewLayer?
     
     @IBAction func searchButtonPressed(sender: AnyObject) {
+        
+        
         var img:UIImage? = imageView.image
         
         if (img != nil) {
