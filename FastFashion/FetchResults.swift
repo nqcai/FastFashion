@@ -21,7 +21,7 @@ class FetchResults {
         }
     }
     
-    func sendBlobRecv(blobId: String) -> NSDictionary {
+    func sendBlobRecv(blobId: String) {
         print(blobId)
         Alamofire.request(.POST, "https://nameless-cliffs-9474.herokuapp.com/bbb", parameters: ["blob_id": blobId]).responseJSON { response in
             print(response.request)  // original URL request
@@ -30,12 +30,24 @@ class FetchResults {
             print(resstr)     // server data
             print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
+            if let JSON = response.result.value as? String {
                 
                 print("JSON: \(JSON)")
+                let n_data = JSON.dataUsingEncoding(NSUTF8StringEncoding)
+                do {
+                    if let json: AnyObject = try NSJSONSerialization.JSONObjectWithData(n_data!, options: NSJSONReadingOptions.AllowFragments) { // Check 2
+                    if let jsonDictionary = json as? NSDictionary { // Check 3
+                        print("\(jsonDictionary)")
+                    }
+                    
+                }
+                } catch {}
+
+                
             }
         
         }
+       
         
     }
     
