@@ -11,6 +11,10 @@ import UIKit
 
 class ImageStore {
 
+// MARK: Status Variables
+    var uploadStarted = false
+    var uploadFinished = false
+    
 // MARK: Authentication
 
 // If using a SAS token, fill it in here.  If using Shared Key access, comment out the following line.
@@ -89,9 +93,10 @@ required init?() {
             if (!title.isEmpty)
             {
                 let blob = container.blockBlobReferenceFromName(title)
+                self.uploadStarted = true
                 
                 blob.uploadFromText(contents ?? "",  completionHandler: { (error: NSError?) -> Void in
-                    print(error)
+                    self.uploadFinished = true
                 })
             }
         

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C391BC9F1AB00E04944 /* RBResizer.swift */; settings = {ASSET_TAGS = (); }; };
 		3774F8EF1BC9FB070051DDC6 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774F8EE1BC9FB070051DDC6 /* ImageStore.swift */; settings = {ASSET_TAGS = (); }; };
 		3774F8F11BC9FB120051DDC6 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774F8F01BC9FB120051DDC6 /* libxml2.2.tbd */; };
 		3774F8F31BC9FB3B0051DDC6 /* Azure Storage Client Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774F8F21BC9FB3B0051DDC6 /* Azure Storage Client Library.framework */; settings = {ASSET_TAGS = (); }; };
+		3774F8F71BCA1D090051DDC6 /* FetchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774F8F61BCA1D090051DDC6 /* FetchResults.swift */; settings = {ASSET_TAGS = (); }; };
+		C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D05C391BC9F1AB00E04944 /* RBResizer.swift */; settings = {ASSET_TAGS = (); }; };
 		C3F1FF641BC8F08400117D9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF631BC8F08400117D9B /* AppDelegate.swift */; };
 		C3F1FF661BC8F08400117D9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF651BC8F08400117D9B /* ViewController.swift */; };
 		C3F1FF691BC8F08400117D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F1FF671BC8F08400117D9B /* Main.storyboard */; };
@@ -42,12 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C3D05C391BC9F1AB00E04944 /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
-		C3D05C3B1BC9F46200E04944 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		3774F8ED1BC9FB070051DDC6 /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
 		3774F8EE1BC9FB070051DDC6 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		3774F8F01BC9FB120051DDC6 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		3774F8F21BC9FB3B0051DDC6 /* Azure Storage Client Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Azure Storage Client Library.framework"; sourceTree = "<group>"; };
+		3774F8F61BCA1D090051DDC6 /* FetchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResults.swift; sourceTree = "<group>"; };
+		C3D05C391BC9F1AB00E04944 /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
+		C3D05C3B1BC9F46200E04944 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		C3F1FF601BC8F08400117D9B /* FastFashion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastFashion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F1FF631BC8F08400117D9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F1FF651BC8F08400117D9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				C3F1FF9D1BC9D27F00117D9B /* MealTableViewController.swift */,
 				C3F1FF9F1BC9D4DB00117D9B /* Meal.swift */,
 				C3D05C391BC9F1AB00E04944 /* RBResizer.swift */,
+				3774F8F61BCA1D090051DDC6 /* FetchResults.swift */,
 			);
 			path = FastFashion;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				C3F1FF9E1BC9D27F00117D9B /* MealTableViewController.swift in Sources */,
 				C3F1FF661BC8F08400117D9B /* ViewController.swift in Sources */,
+				3774F8F71BCA1D090051DDC6 /* FetchResults.swift in Sources */,
 				C3D05C3A1BC9F1AB00E04944 /* RBResizer.swift in Sources */,
 				C3F1FF9A1BC9C3F700117D9B /* TableViewController.swift in Sources */,
 				C3F1FF641BC8F08400117D9B /* AppDelegate.swift in Sources */,
