@@ -26,5 +26,9 @@ class RecipeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        print("Touched Cell View")
+//    }
 
 }

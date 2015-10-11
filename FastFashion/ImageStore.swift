@@ -91,7 +91,7 @@ required init?() {
                 let blob = container.blockBlobReferenceFromName(title)
                 
                 blob.uploadFromText(contents ?? "",  completionHandler: { (error: NSError?) -> Void in
-                    print(error)
+                    return "asdf"
                 })
             }
         

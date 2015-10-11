@@ -14,7 +14,7 @@ class TableViewController: UITableViewController {
     
     var meals = [Meal]()
     
-//    var imageSize = CGSize(width: 90, height: 90)
+    var imageSize = CGSize(width: 90, height: 90)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,23 +28,27 @@ class TableViewController: UITableViewController {
     }
     
     func getOptimalImageSize(image: UIImage) -> CGSize {
-        let x = image.size.width
-        let y = image.size.height
+        let x = image.size.width * 2
+        let y = image.size.height * 2
+        print(x)
+        print(y)
         let minDimension = min(x, y)
+        print(minDimension)
         return CGSize(width: minDimension, height: minDimension)
     }
     
     func loadSampleMeals() {
         var photo1 = UIImage(named: "salsa")!
-        photo1 = RBSquareImageTo(photo1, size: getOptimalImageSize(photo1))
+//        photo1 = RBSquareImageTo(photo1, size: imageSize)
+        print(photo1.size.width)
         let meal1 = Meal(name: "Salsa", photo: photo1, rating: 4, recipe: ["Add salsa"])!
         
         var photo2 = UIImage(named: "coffee")!
-        photo2 = RBSquareImageTo(photo2, size: getOptimalImageSize(photo2))
+//        photo2 = RBSquareImageTo(photo2, size: imageSize)
         let meal2 = Meal(name: "Iced Coffee", photo: photo2, rating: 2, recipe: ["Put some caffeine"])!
         
         var photo3 = UIImage(named: "baconpopper")!
-        photo3 = RBSquareImageTo(photo3, size: getOptimalImageSize(photo3))
+//        photo3 = RBSquareImageTo(photo3, size: getOptimalImageSize(photo3))
         let meal3 = Meal(name: "Bacon Wrapped Jalepeno Poppers", photo: photo3, rating: 1, recipe: ["Wrap with bacon"])!
         
         meals += [meal1, meal2, meal3]
@@ -122,14 +126,24 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
+    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        print("PUSHED")
+//        let controller1 : DetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("DetailView") as! DetailTableViewController
+//        self.navigationController?.pushViewController(controller1, animated: true)
+//    }
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//
+//        var controller1 : DetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("DetailView") as! DetailTableViewController
+//        self.navigationController?.pushViewController(controller1, animated: true)
+//    }
+
 
 }
