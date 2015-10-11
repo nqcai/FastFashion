@@ -22,6 +22,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var previewLayer: AVCaptureVideoPreviewLayer?
     
     @IBAction func searchButtonPressed(sender: AnyObject) {
+        var img:UIImage? = imageView.image
+        
+        var imgStore = ImageStore()
+        
+        
+        imgStore?.uploadImage(img!)
+        
         //myImageUploadRequest();
     }
     
