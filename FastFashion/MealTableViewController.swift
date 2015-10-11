@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  MealTableViewController.swift
 //  FastFashion
 //
 //  Created by Nicholas Cai on 10/10/15.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-
+class MealTableViewController: UITableViewController {
+    
     // MARK: Properties
     
     var meals = [Meal]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleMeals()
 
+        loadSampleMeals()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,28 +38,23 @@ class TableViewController: UITableViewController {
         meals += [meal1, meal2, meal3]
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func DoneButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     // MARK: - Table view data source
-    
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
+
         return 1
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return meals.count
     }
-    
+
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "RecipeTableViewCell"
@@ -67,13 +62,14 @@ class TableViewController: UITableViewController {
         
         // Fetches the appropriate meal for the data source layout.
         let meal = meals[indexPath.row]
-        
+
         cell.nameLabel.text         =   meal.name
         cell.photoImageView.image   =   meal.photo
-        
+
         return cell
     }
-
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -121,3 +117,16 @@ class TableViewController: UITableViewController {
     */
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

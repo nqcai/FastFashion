@@ -56,7 +56,7 @@
                                         </state>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VN1-h5-zbn"/>
-                                            <segue destination="LCg-rE-k6S" kind="modal" id="6dX-Vx-Ydq"/>
+                                            <segue destination="bBT-wv-8vT" kind="modal" id="5Rc-YX-7jX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -115,10 +115,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cRG-6a-wqy">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                            <animations/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-4M-9ba">
                                             <rect key="frame" x="98" y="8" width="214" height="21"/>
                                             <animations/>
@@ -126,15 +122,18 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXw-8f-hea" customClass="RatingControl">
-                                            <rect key="frame" x="98" y="37" width="214" height="44"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cRG-6a-wqy">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="fEO-4M-9ba" id="RXg-I3-7Dr"/>
+                                    <outlet property="photoImageView" destination="cRG-6a-wqy" id="x24-dg-vrh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -160,26 +159,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X63-Fh-59b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139" y="423"/>
+            <point key="canvasLocation" x="1509" y="402"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="T2L-97-dvd">
+        <scene sceneID="U8Q-He-sPk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LCg-rE-k6S" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bBT-wv-8vT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ecF-3R-mFn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ylb-VP-Njh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="b4j-v5-zdQ" kind="relationship" relationship="rootViewController" id="dyI-r8-CtN"/>
+                        <segue destination="b4j-v5-zdQ" kind="relationship" relationship="rootViewController" id="fke-B4-cs9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="idn-9f-xeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnF-M5-kgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="423"/>
+            <point key="canvasLocation" x="977" y="402"/>
         </scene>
     </scenes>
     <resources>

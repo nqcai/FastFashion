@@ -16,6 +16,8 @@
 		C3F1FF841BC8F08400117D9B /* FastFashionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF831BC8F08400117D9B /* FastFashionUITests.swift */; };
 		C3F1FF9A1BC9C3F700117D9B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF991BC9C3F700117D9B /* TableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C3F1FF9C1BC9C8D100117D9B /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF9B1BC9C8D100117D9B /* RecipeTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F1FF9E1BC9D27F00117D9B /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF9D1BC9D27F00117D9B /* MealTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F1FFA01BC9D4DB00117D9B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1FF9F1BC9D4DB00117D9B /* Meal.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		C3F1FF851BC8F08400117D9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3F1FF991BC9C3F700117D9B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C3F1FF9B1BC9C8D100117D9B /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeTableViewCell.swift; path = ../RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		C3F1FF9D1BC9D27F00117D9B /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
+		C3F1FF9F1BC9D4DB00117D9B /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				C3F1FF6A1BC8F08400117D9B /* Assets.xcassets */,
 				C3F1FF6C1BC8F08400117D9B /* LaunchScreen.storyboard */,
 				C3F1FF6F1BC8F08400117D9B /* Info.plist */,
+				C3F1FF9D1BC9D27F00117D9B /* MealTableViewController.swift */,
+				C3F1FF9F1BC9D4DB00117D9B /* Meal.swift */,
 			);
 			path = FastFashion;
 			sourceTree = "<group>";
@@ -261,9 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F1FF9E1BC9D27F00117D9B /* MealTableViewController.swift in Sources */,
 				C3F1FF661BC8F08400117D9B /* ViewController.swift in Sources */,
 				C3F1FF9A1BC9C3F700117D9B /* TableViewController.swift in Sources */,
 				C3F1FF641BC8F08400117D9B /* AppDelegate.swift in Sources */,
+				C3F1FFA01BC9D4DB00117D9B /* Meal.swift in Sources */,
 				C3F1FF9C1BC9C8D100117D9B /* RecipeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
