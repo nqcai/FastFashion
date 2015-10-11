@@ -205,23 +205,23 @@
 		C3F1FF621BC8F08400117D9B /* FastFashion */ = {
 			isa = PBXGroup;
 			children = (
-				C3F1FF631BC8F08400117D9B /* AppDelegate.swift */,
-				C3F1FF651BC8F08400117D9B /* ViewController.swift */,
-				C3F1FF991BC9C3F700117D9B /* TableViewController.swift */,
-				C3F1FF9B1BC9C8D100117D9B /* RecipeTableViewCell.swift */,
-				C3D05C401BCA30FF00E04944 /* DetailTableViewController.swift */,
-				C3D05C3E1BCA260D00E04944 /* DetailViewController.swift */,
 				C3F1FF671BC8F08400117D9B /* Main.storyboard */,
-				3774F8EE1BC9FB070051DDC6 /* ImageStore.swift */,
 				C3D05C3B1BC9F46200E04944 /* MyPlayground.playground */,
 				3774F8ED1BC9FB070051DDC6 /* Connector.h */,
 				C3F1FF6A1BC8F08400117D9B /* Assets.xcassets */,
 				C3F1FF6C1BC8F08400117D9B /* LaunchScreen.storyboard */,
 				C3F1FF6F1BC8F08400117D9B /* Info.plist */,
+				C3F1FF631BC8F08400117D9B /* AppDelegate.swift */,
+				C3D05C3E1BCA260D00E04944 /* DetailViewController.swift */,
+				C3D05C401BCA30FF00E04944 /* DetailTableViewController.swift */,
+				3774F8F61BCA1D090051DDC6 /* FetchResults.swift */,
+				3774F8EE1BC9FB070051DDC6 /* ImageStore.swift */,
 				C3F1FF9F1BC9D4DB00117D9B /* Meal.swift */,
 				C3D05C391BC9F1AB00E04944 /* RBResizer.swift */,
-				3774F8F61BCA1D090051DDC6 /* FetchResults.swift */,
+				C3F1FF9B1BC9C8D100117D9B /* RecipeTableViewCell.swift */,
 				A6FB4EBF1BCA6A6B00905898 /* Singleton.swift */,
+				C3F1FF991BC9C3F700117D9B /* TableViewController.swift */,
+				C3F1FF651BC8F08400117D9B /* ViewController.swift */,
 			);
 			path = FastFashion;
 			sourceTree = "<group>";

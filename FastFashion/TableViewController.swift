@@ -13,9 +13,10 @@ class TableViewController: UITableViewController {
     // MARK: Properties
     
     var meals = [Meal]()
-    
     var imageSize = CGSize(width: 90, height: 90)
 
+    let singleton = Singleton.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSampleMeals()
@@ -41,7 +42,7 @@ class TableViewController: UITableViewController {
         var photo1 = UIImage(named: "salsa")!
 //        photo1 = RBSquareImageTo(photo1, size: imageSize)
         print(photo1.size.width)
-        let meal1 = Meal(name: "Salsa", photo: photo1, rating: 4, recipe: ["Add salsa"])!
+        let meal1 = Meal(name: "Salsa", photo: photo1, rating: 4, recipe: ["Add Salsa!"])!
         
         var photo2 = UIImage(named: "coffee")!
 //        photo2 = RBSquareImageTo(photo2, size: imageSize)
