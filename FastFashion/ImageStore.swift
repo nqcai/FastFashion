@@ -29,12 +29,8 @@ var container : AZSCloudBlobContainer
 var continuationToken : AZSContinuationToken?
 
 // MARK: Initializers
-    var uploadStarted = false
-    var uploadStatus = "NO"
-    
+
 required init?() {
-    
-    
     
     if (usingSAS) {
         self.container = AZSCloudBlobContainer(url: NSURL(string: containerURL)!)
@@ -93,10 +89,9 @@ required init?() {
             if (!title.isEmpty)
             {
                 let blob = container.blockBlobReferenceFromName(title)
-                self.uploadStarted = true
                 
                 blob.uploadFromText(contents ?? "",  completionHandler: { (error: NSError?) -> Void in
-                    self.uploadStatus = "DONE"
+                    print(error)
                 })
             }
         
