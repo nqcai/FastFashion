@@ -85,46 +85,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func sendSearchRequest(sender: AnyObject) {
-        var imgData = UIImagePNGRepresentation(imageView.image!)
+        let imgData = UIImagePNGRepresentation(imageView.image!)
 
         if (imgData != nil) {
             //TODO have base URL
-            let postURL = ""
+            let postURL = "https://nameless-cliffs-9474.herokuapp.com/images/api/v1.0/"
             let myURL = NSURL(string: postURL)
             
-            var request = NSMutableURLRequest(URL: myURL!)
-            var session = NSURLSession.sharedSession()
-            
+            let request = NSMutableURLRequest(URL: myURL!)
             request.HTTPMethod = "POST"
-            
-            var boundary = NSString(format: "----1a941z5910")
-            var contentType = NSString(format: "multipart/form-data; boundary=%@", boundary)
-            request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
-            
-            var body = NSMutableData()
-            
-            //Title
-            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-            body.appendData(NSString(format:"Content-Disposition: form-data; name=\"title\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-            body.appendData("Hey it's Cliff".dataUsingEncoding(NSUTF8StringEncoding)!)
-            
-            //Image
-            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-            body.appendData(NSString(format: "Content-Disposition: form-data; name=\"FoodToTag_img\"; filename=\"img.jpg\"\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-            body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-            body.appendData(imgData!)
-            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-            
-            request.HTTPBody = body
-            
-            do {
-                let returnData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
-                var returnString = NSString(data: returnData, encoding: NSUTF8StringEncoding)
-            } catch (let e) {
-                print(e)
-            }
 
+            do {
+                let base64Data = imgData!.base64EncodedDataWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+//                let jsonObject = ["file": base64String]
+//                let jsonData = try NSJSONSerialization.dataWithJSONObject(jsonObject, options: NSJSONWritingOptions(rawValue: 0))
+                request.HTTPBody = base64Data
+            } catch {
+                print(error)
+            }
             
+            
+            NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                do {
+                    if data != nil {
+                        let jsonObject = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                        NSLog("%@", jsonObject as! NSArray)
+                    }
+                } catch {
+                    print(error)
+                }
+            }).resume()
         }
         
     }
